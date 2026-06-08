@@ -1,0 +1,158 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   ttrungn-portfolio — phosphor terminal theme (Tailwind v4)
+   CSS-first config via @theme
+   ============================================================ */
+@theme {
+  --color-bg: #0a0c0a;
+  --color-phosphor: #c8d6c8;
+  --color-phosphor-dim: #5a6b5a;
+  --color-accent: #9bf7c0;
+  --color-warn: #ffd479;
+  --color-err: #ff5c7a;
+
+  --font-mono: 'Cascadia Code', 'Consolas', 'SF Mono', 'Menlo', monospace;
+}
+
+:root {
+  --glow: rgb(155 247 192 / 0.35);
+  --scan: rgb(0 0 0 / 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-phosphor);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgb(155 247 192 / 0.25);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-phosphor-dim);
+  border-radius: 5px;
+}
+
+/* ---------- Glow text utility ---------- */
+.text-glow {
+  text-shadow: 0 0 8px var(--glow);
+}
+
+/* ---------- Blinking cursor ---------- */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.cursor {
+  display: inline-block;
+  width: 9px;
+  height: 1.05em;
+  background: var(--color-accent);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  box-shadow: 0 0 8px var(--glow);
+  animation: blink 1s steps(1) infinite;
+}
+
+/* ---------- CRT overlay ---------- */
+.crt-scanlines::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    var(--scan) 3px,
+    transparent 4px
+  );
+}
+.crt-vignette::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 51;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgb(0 0 0 / 0.55) 100%);
+  animation: flicker 4s infinite steps(60);
+}
+@keyframes flicker {
+  0%,
+  97%,
+  100% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0.82;
+  }
+  99% {
+    opacity: 0.94;
+  }
+}
+
+/* ---------- Glitch ---------- */
+@keyframes glitch {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, 1px);
+    color: var(--color-err);
+  }
+  50% {
+    transform: translate(2px, -1px);
+    color: var(--color-accent);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.glitch {
+  animation: glitch 0.18s steps(2) 2;
+}
+
+/* ---------- Fade in ---------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
