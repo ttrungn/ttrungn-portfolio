@@ -1,15 +1,15 @@
-import { PageScaffold } from '@/components/layout/PageScaffold'
-import { AsciiAvatar } from '@/components/ui/AsciiAvatar'
-import { InfoList } from '@/components/ui/InfoList'
-import { SectionHeading } from '@/components/ui/SectionHeading'
-import type { TypeLine } from '@/hooks/useTypewriter'
-import { profile, contact } from '@/data/resume'
+import { PageScaffold } from "@/components/layout/PageScaffold";
+import { AsciiAvatar } from "@/components/ui/AsciiAvatar";
+import { InfoList } from "@/components/ui/InfoList";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import type { TypeLine } from "@/hooks/useTypewriter";
+import { profile, contact } from "@/data/resume";
 
 const boot: TypeLine[] = [
-  { text: 'ssh visitor@ttrungn.dev', kind: 'cmd', className: 'text-accent', speed: 26 },
-  { text: '[ OK ] handshake complete  ▸ AES-256', className: 'text-accent', speed: 10 },
-  { text: 'access granted. welcome, visitor.', className: 'text-accent', speed: 12 },
-]
+  { text: "ssh visitor@ttrungn", kind: "cmd", className: "text-accent", speed: 26 },
+  { text: "[ OK ] handshake complete  ▸ AES-256", className: "text-accent", speed: 10 },
+  { text: "access granted. welcome, visitor.", className: "text-accent", speed: 12 },
+];
 
 export function Home() {
   return (
@@ -25,9 +25,9 @@ export function Home() {
           <div className="mt-3">
             <InfoList
               rows={[
-                { term: 'handle', value: `@${profile.handle}` },
-                { term: 'location', value: contact.location },
-                { term: 'email', value: contact.email },
+                { term: "handle", value: `@${profile.handle}` },
+                { term: "location", value: contact.location },
+                { term: "email", value: contact.email },
               ]}
             />
           </div>
@@ -44,5 +44,5 @@ export function Home() {
         </div>
       </div>
     </PageScaffold>
-  )
+  );
 }
