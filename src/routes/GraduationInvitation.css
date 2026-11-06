@@ -1,0 +1,592 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap");
+
+
+/* The approved standalone HTML relies on browser defaults. Restore those
+   inside the invitation so Tailwind preflight cannot change its typography. */
+.graduation-site, .graduation-site *  {
+   all: revert;
+   box-sizing: border-box;
+
+}
+
+.graduation-site  {
+   display: block;
+   position: relative;
+   line-height: normal;
+
+}
+
+.graduation-site *::before, .graduation-site *::after  {
+   box-sizing: border-box;
+
+}
+
+.graduation-site {
+  --ink:#1c1b19;
+  --cream:#f4efe6;
+  --orange:#f2692e;
+  --gold:#dbb788;
+  --muted:#aaa69f
+}
+.graduation-site * {
+  box-sizing:border-box
+}
+html:has(.graduation-site) {
+  scroll-behavior:smooth
+}
+.graduation-site {
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'DM Sans',Arial,sans-serif
+}
+.graduation-site button,.graduation-site input,.graduation-site select {
+  font:inherit
+}
+.graduation-site button {
+  cursor:pointer
+}
+.graduation-site ::selection {
+  background:var(--orange);
+  color:white
+}
+.graduation-site .topbar {
+  position:absolute;
+  z-index:10;
+  top:0;
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:26px 5vw;
+  color:#fff
+}
+.graduation-site .logo {
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.15em;
+  line-height:1.5
+}
+.graduation-site .tiny {
+  font-size:10px;
+  letter-spacing:.25em;
+  text-transform:uppercase
+}
+.graduation-site .nav-actions {
+  display:flex;
+  gap:16px;
+  align-items:center
+}
+.graduation-site .sound {
+  background:transparent;
+  border:1px solid #ffffff75;
+  border-radius:40px;
+  color:#fff;
+  padding:10px 15px;
+  font-size:11px;
+  letter-spacing:.09em
+}
+.graduation-site .hero {
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+  background:radial-gradient(ellipse at 58% 76%,#df672f 0%,#9d4328 24%,#3d2925 57%,#16181c 100%)
+}
+.graduation-site .hero:before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,#0009,transparent 32%,transparent 65%,#0a0b0ab8),repeating-linear-gradient(105deg,transparent 0 85px,#ffffff06 86px 87px);
+  pointer-events:none
+}
+.graduation-site .halo {
+  position:absolute;
+  width:min(73vw,730px);
+  aspect-ratio:1;
+  border-radius:50%;
+  bottom:-31%;
+  left:50%;
+  transform:translateX(-50%);
+  background:radial-gradient(circle,#ffc779 0%,#fb9447 28%,#dc592d 55%,#c14b2e 65%,transparent 67%);
+  filter:blur(1px);
+  box-shadow:0 0 90px 25px #fa79334d;
+  opacity:.95
+}
+.graduation-site .arch {
+  position:absolute;
+  top:10%;
+  bottom:-25%;
+  width:min(64vw,620px);
+  border:1px solid #ffffff24;
+  border-radius:450px 450px 0 0;
+  transform:translateY(4%)
+}
+.graduation-site .arch.two {
+  width:min(78vw,800px);
+  top:5%;
+  opacity:.5
+}
+.graduation-site .star {
+  position:absolute;
+  color:#ffffff7d;
+  font-size:14px
+}
+.graduation-site .star.a {
+  top:28%;
+  left:15%
+}
+.graduation-site .star.b {
+  top:34%;
+  right:18%
+}
+.graduation-site .star.c {
+  bottom:24%;
+  left:22%
+}
+.graduation-site .hero-content {
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:120px 18px 145px;
+  width:100%
+}
+.graduation-site .eyebrow {
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.4em;
+  text-transform:uppercase
+}
+.graduation-site .hero h1 {
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:500;
+  font-size:clamp(65px,12vw,170px);
+  line-height:.91;
+  letter-spacing:-.073em;
+  margin:27px auto 24px;
+  max-width:1150px
+}
+.graduation-site .hero h1 em {
+  font-weight:500;
+  display:block;
+  letter-spacing:-.065em;
+  color:#fbd1a0
+}
+.graduation-site .hero-name {
+  margin:25px 0 10px;
+  font-size:clamp(15px,2.4vw,25px);
+  letter-spacing:.22em;
+  font-weight:500
+}
+.graduation-site .hero-date {
+  font-size:12px;
+  letter-spacing:.24em;
+  color:#fce2c4
+}
+.graduation-site .hero-line {
+  width:35px;
+  height:1px;
+  background:#ffffff8c;
+  margin:22px auto
+}
+.graduation-site .hero-bottom {
+  position:absolute;
+  bottom:29px;
+  z-index:3;
+  display:flex;
+  justify-content:space-between;
+  left:5vw;
+  right:5vw;
+  color:#f9e2d0;
+  font-size:10px;
+  letter-spacing:.2em
+}
+.graduation-site .scroll-cue {
+  animation:float 2s ease-in-out infinite
+}
+@keyframes float {
+  50% {
+  transform:translateY(7px)
+}
+
+}
+.graduation-site section {
+  padding:115px max(6vw,24px)
+}
+.graduation-site .section-label {
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.23em;
+  text-transform:uppercase;
+  color:var(--orange)
+}
+.graduation-site .intro {
+  display:grid;
+  grid-template-columns:1fr 1.1fr;
+  gap:10%;
+  align-items:center;
+  min-height:690px
+}
+.graduation-site .intro h2,.graduation-site .details h2,.graduation-site .rsvp h2 {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(48px,6vw,88px);
+  line-height:1.07;
+  letter-spacing:-.05em;
+  font-weight:500;
+  margin:24px 0
+}
+.graduation-site .intro h2 em {
+  color:var(--orange)
+}
+.graduation-site .intro p {
+  line-height:1.95;
+  font-size:16px;
+  color:#5d5953;
+  max-width:520px
+}
+.graduation-site .stamp {
+  width:min(370px,100%);
+  aspect-ratio:3/4;
+  border:1px solid #b8a997;
+  margin:auto;
+  padding:13px;
+  transform:rotate(4deg);
+  box-shadow:25px 30px 0 #e7dfd3
+}
+.graduation-site .stamp-inner {
+  height:100%;
+  border:1px solid #cab8a3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  gap:20px;
+  background:radial-gradient(circle at 50% 35%,#f9d1a8,#ead0b7 36%,#e4c1a4 60%,#d8b69c)
+}
+.graduation-site .cap {
+  font-size:100px;
+  line-height:1;
+  filter:grayscale(1);
+  opacity:.75
+}
+.graduation-site .stamp-inner strong {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:31px;
+  font-weight:500
+}
+.graduation-site .stamp-inner small {
+  font-size:10px;
+  letter-spacing:.2em
+}
+.graduation-site .quote {
+  background:#21201e;
+  color:#fff;
+  text-align:center;
+  padding:95px 20px
+}
+.graduation-site .quote .section-label {
+  color:#ffc28d
+}
+.graduation-site .quote blockquote {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(27px,4.2vw,57px);
+  line-height:1.28;
+  max-width:930px;
+  margin:30px auto;
+  font-weight:500
+}
+.graduation-site .quote em {
+  color:#eeaa75
+}
+.graduation-site .details {
+  text-align:center
+}
+.graduation-site .details h2 {
+  margin-bottom:45px
+}
+.graduation-site .detail-grid {
+  max-width:990px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  border-top:1px solid #cfc6b9;
+  border-bottom:1px solid #cfc6b9
+}
+.graduation-site .detail-item {
+  padding:38px 20px
+}
+.graduation-site .detail-item+.detail-item {
+  border-left:1px solid #cfc6b9
+}
+.graduation-site .detail-item .value {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(24px,3vw,37px);
+  margin:14px 0
+}
+.graduation-site .detail-item p {
+  margin:0;
+  color:#6b665f;
+  font-size:12px;
+  line-height:1.7
+}
+.graduation-site .map-link {
+  display:inline-block;
+  margin-top:30px;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--orange);
+  padding-bottom:7px;
+  font-size:12px;
+  letter-spacing:.12em
+}
+.graduation-site .count-wrap {
+  background:#f2692e;
+  color:#fff;
+  text-align:center
+}
+.graduation-site .count-wrap .section-label {
+  color:#ffe2ca
+}
+.graduation-site .count-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(40px,6vw,80px);
+  font-weight:500;
+  letter-spacing:-.05em;
+  margin:15px 0 50px
+}
+.graduation-site .count {
+  display:flex;
+  justify-content:center;
+  gap:clamp(15px,5vw,70px)
+}
+.graduation-site .count strong {
+  display:block;
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(42px,8vw,105px);
+  font-weight:500;
+  line-height:1
+}
+.graduation-site .count span {
+  display:block;
+  font-size:10px;
+  letter-spacing:.2em;
+  margin-top:17px;
+  text-transform:uppercase
+}
+.graduation-site .rsvp {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12%;
+  align-items:start;
+  max-width:1400px;
+  margin:auto
+}
+.graduation-site .rsvp p {
+  line-height:1.8;
+  color:#625d56;
+  max-width:420px
+}
+.graduation-site .form {
+  padding-top:22px
+}
+.graduation-site .field {
+  margin-bottom:24px
+}
+.graduation-site .field label {
+  display:block;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.18em;
+  margin-bottom:11px;
+  text-transform:uppercase
+}
+.graduation-site .field input,.graduation-site .field select {
+  width:100%;
+  border:none;
+  border-bottom:1px solid #bfb5a8;
+  background:transparent;
+  padding:13px 2px;
+  border-radius:0;
+  outline:none;
+  color:var(--ink)
+}
+.graduation-site .field input:focus,.graduation-site .field select:focus {
+  border-bottom-color:var(--orange)
+}
+.graduation-site .submit {
+  border:none;
+  background:var(--ink);
+  color:#fff;
+  padding:18px 30px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.15em;
+  width:100%;
+  margin-top:10px;
+  transition:background .2s
+}
+.graduation-site .submit:hover {
+  background:var(--orange)
+}
+.graduation-site .notice {
+  margin-top:16px;
+  color:#695f53;
+  font-size:12px;
+  line-height:1.8
+}
+.graduation-site .feedback {
+  display:none;
+  color:#267e4f;
+  font-weight:700;
+  margin-top:14px
+}
+.graduation-site .footer {
+  background:#1b1b1a;
+  color:#fff;
+  text-align:center;
+  padding:80px 18px 35px
+}
+.graduation-site .footer h2 {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(40px,7vw,94px);
+  line-height:1;
+  margin:16px auto 55px;
+  font-weight:500
+}
+.graduation-site .footer small {
+  font-size:11px;
+  color:#b4aaa0;
+  letter-spacing:.13em
+}
+.graduation-site .reveal {
+  opacity:1;
+  transform:none;
+  transition:opacity .8s ease,transform .8s ease
+}
+.graduation-site.js-animations .reveal {
+  opacity:1;
+  transform:none
+}
+.graduation-site.js-animations .reveal.visible {
+  animation:riseIn .7s ease both
+}
+@keyframes riseIn {
+  from {
+  transform:translateY(18px)
+}
+to {
+  transform:translateY(0)
+}
+
+}
+@media(prefers-reduced-motion:reduce) {
+  html:has(.graduation-site) {
+  scroll-behavior:auto
+}
+.graduation-site .reveal {
+  opacity:1;
+  transform:none;
+  transition:none
+}
+.graduation-site .scroll-cue {
+  animation:none
+}
+
+}
+@media(max-width:760px) {
+  .graduation-site .topbar {
+  padding:21px 20px
+}
+.graduation-site .topbar .tiny {
+  display:none
+}
+.graduation-site .hero-content {
+  padding:130px 15px 140px
+}
+.graduation-site .hero h1 {
+  font-size:clamp(66px,15vw,105px)
+}
+.graduation-site .hero-name {
+  font-size:14px
+}
+.graduation-site .halo {
+  width:100vw;
+  bottom:-14%
+}
+.graduation-site .arch {
+  width:90vw
+}
+.graduation-site .arch.two {
+  width:110vw
+}
+.graduation-site .hero-bottom {
+  left:20px;
+  right:20px
+}
+.graduation-site .intro,.graduation-site .rsvp {
+  grid-template-columns:1fr;
+  gap:60px
+}
+.graduation-site .intro {
+  min-height:unset
+}
+.graduation-site .stamp {
+  width:min(285px,80%)
+}
+.graduation-site section {
+  padding:80px 24px
+}
+.graduation-site .detail-grid {
+  grid-template-columns:1fr
+}
+.graduation-site .detail-item+.detail-item {
+  border-left:0;
+  border-top:1px solid #cfc6b9
+}
+.graduation-site .count {
+  gap:16px
+}
+.graduation-site .count strong {
+  font-size:clamp(40px,10vw,65px)
+}
+.graduation-site .count span {
+  font-size:9px
+}
+.graduation-site .quote {
+  padding:75px 24px
+}
+
+}
+
+
+/* Keep the portfolio's custom scrollbar out of the standalone design. */
+body:has(.graduation-site)::-webkit-scrollbar  {
+   width: revert;
+
+}
+
+body:has(.graduation-site)::-webkit-scrollbar-track  {
+   background: revert;
+
+}
+
+body:has(.graduation-site)::-webkit-scrollbar-thumb  {
+   background: revert;
+   border-radius: revert;
+
+}
+
+
+.graduation-site .graduation-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
